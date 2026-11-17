@@ -1,0 +1,29 @@
+# Terraform local cache and saved plans
+.terraform/
+*.tfplan
+tfplan
+
+# Terraform state can contain resource details. Never publish it.
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Local variable files can contain secrets. Commit only *.tfvars.example.
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Built Lambda zip files
+build/
+dist/
+*.zip
+
+# OS junk
+.DS_Store
