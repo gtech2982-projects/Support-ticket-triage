@@ -1,3 +1,6 @@
+import os
+
+
 def classify(message):
     text = message.lower()
 
@@ -11,9 +14,14 @@ def classify(message):
 
 
 def handler(event, context):
+    import boto3
+
     category = classify(event["message"])
-    return {
+    item = {
         "ticket_id": event["ticket_id"],
         "message": event["message"],
         "category": category,
     }
+    table = boto3.resource("dynamodb").Table(os.environ["TABLE_NAME"])
+    table.put_item(Item=item)
+    return item
