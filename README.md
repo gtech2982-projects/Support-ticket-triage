@@ -15,3 +15,10 @@ A ticket arrives at the API. Python 3.12 assigns a category and stores the ticke
 
 ```powershell
 Invoke-RestMethod -Method Post -Uri "https://brgbbar6zh.execute-api.ap-south-1.amazonaws.com/tickets" -ContentType "application/json" -Body '{"ticket_id":"T-1001","message":"my wifi is slow"}'
+```
+
+The reply shows `ticket_id`, `message`, and `category`.
+
+## Remove it
+
+From the project folder, run `terraform destroy` and type `yes` only when the preview lists resources from this project.
